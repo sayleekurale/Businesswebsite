@@ -1,0 +1,519 @@
+/* Body and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif, Georgia;
+    color: #216869;
+    background-color: #f0f0f0;
+}
+
+/* Header Section */
+.video-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px); /* Blur effect on video */
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay on video */
+}
+
+.header-content {
+    text-align: center;
+    color: #b7efa1;
+    z-index: 2;
+}
+
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.logo {
+    width: 600px;
+    margin-bottom: 10px;
+    animation: logoEntrance 1.5s ease-out forwards;
+}
+
+
+.company-name {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #b7efa1;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #7fcc72;
+    margin-bottom: 10px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    background-color: #49a078;
+    color: #ffffff;
+    text-decoration: none; /* Remove underline by default */
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #7fcc72;
+    transform: scale(1.1);
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Additional Content Section */
+.content-section {
+    padding: 50px 20px;
+    background-color: #86d9b8;
+    color: #216869;
+}
+
+/* Sustainability Section */
+.sustainability-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    background: linear-gradient(270deg, #216869, #26847b, #49a078, #7fcc72, #b7efa1);
+    background-size: 400% 100%; /* Increase size for animation effect */
+    animation: gradientAnimation 10s ease infinite; /* Animation settings */
+}
+  /* Define the keyframes for the animation */
+  @keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Midpoint position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
+
+
+.sustainability-container {
+    display: flex;
+    align-items: center;
+    width: 97%;
+    max-width: 2000px;
+    margin: 20px 0;
+    position: relative;
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.sustainability-container.left .image-container {
+    order: 1;
+}
+
+.sustainability-container.right .image-container {
+    order: 2;
+}
+
+.sustainability-container.left {
+    flex-direction: row;
+}
+
+.sustainability-container.right {
+    flex-direction: row-reverse;
+}
+
+/* Image Styling */
+.image-container {
+    flex: 1;
+    overflow: visible;
+}
+
+.image-container img {
+    width: 95%; /* Slight reduction for a balanced look */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+/* Text Container Styling */
+.text-container {
+    flex: 1;
+    padding: 15px 20px;
+    background-color: #216869;
+    color: #ffffff;
+    border-radius: 8px;
+    width: 600px;
+    height:200px;
+    margin-left: auto; /* Slight overlap effect */
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings and Paragraphs */
+.text-container h2 {
+    font-size: 1.6rem;
+    color: #b7efa1;
+    margin-bottom: 8px;
+}
+
+.text-container p {
+    font-size: 1rem;
+    color: #e1f7d5;
+    line-height: 1.4;
+}
+
+/* Scroll Animation */
+.sustainability-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service Gallery Styles */
+.service-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-item {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styles */
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0; /* Round top corners */
+}
+
+/* Title Styles */
+.service-item h2 {
+    color: #54DD52;
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+/* Description Styles */
+.service-item p {
+    color: #333;
+    font-size: 0.9rem;
+    padding: 0 15px 15px 15px;
+}
+
+/* Quote Section */
+/* Quote Section */
+.quote-section {
+    position: fixed; /* Fix position to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Ensures the background covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Center vertically */
+}
+
+/* Overlay to darken background */
+.quote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+}
+
+/* Quote Content */
+.quote-content {
+    position: relative; /* Ensure quote content is positioned relative to the section */
+    z-index: 1; /* Place content above the overlay */
+    color: white; /* Text color for the quote */
+    padding: 20px; /* Add some padding */
+    text-align: right; /* Align text to the right */
+}
+
+.quote {
+    font-size: 1.5rem; /* Adjust font size for visibility */
+    margin-bottom: 20px; /* Space between quote and link */
+}
+
+.nav-link {
+    color: #b7efa1; /* Light green color for the link */
+    font-weight: bold;
+    text-decoration: underline; /* Underline the link */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.nav-link:hover {
+    color: white; /* Change color on hover */
+}
+
+/* Quote Text */
+/* Quote Section */
+.quote-section {
+    position: relative; /* Relative positioning to contain overlay */
+    width: 100%; /* Full width of the container */
+    height: 780px; /* Set to desired height */
+    background-size: cover; /* Ensures the background covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Center vertically */
+}
+
+/* Overlay to darken background */
+.quote-overlay {
+    position: absolute; /* Positioned to cover the entire section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    z-index: 1; /* Ensure overlay is above the background but below the content */
+}
+
+/* Quote Content */
+.quote-content {
+    position: relative; /* Ensure quote content is positioned relative to the section */
+    z-index: 2; /* Place content above the overlay */
+    color: white; /* Text color for the quote */
+    padding: 20px; /* Add some padding */
+    text-align: right; /* Align text to the right */
+    max-width: 500px; /* Set max width for quote content */
+}
+
+/* Quote Text */
+.quote {
+    font-size: 1.5rem; /* Adjust font size as necessary */
+    font-style: italic; /* Italic style for the quote */
+    margin-bottom: 10px; /* Adjust margin as necessary */
+}
+
+.nav-link {
+    color: #b7efa1; /* Light green color for the link */
+    font-weight: bold;
+    text-decoration: underline; /* Underline the link */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.nav-link:hover {
+    color: white; /* Change color on hover */
+}
+
+/* Activate when in view */
+.quote-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*footer*/
+
+
+.footer-menu {
+    background-color: #216869;
+    padding: 20px 0;
+    color: white;
+}
+
+.content-footer-menu {
+    max-width: 1500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and Links */
+.bloc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.footer-info {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color:white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+    color: #0073e6;
+}
+
+/* Social Media Icons and Back to Top Button */
+.bloc-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusted gap between items */
+}
+
+.contact-info {
+    text-align: justify; /* Align text to the right */
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Increased gap for more space between icons */
+}
+
+.social a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: color 0.9s;
+}
+
+.social a:hover {
+    color: #0073e6;
+}
+
+.button-top {
+    padding: 10px 12px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.button-top:hover {
+    background-color: #005bb5;
+}
+
+.footer-menu-secondary {
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration-color: #216869;
+}
+.footer-menu-secondary p{
+    font-size: 14px;
+    color: #216869;
+}
+.footer-info h3 {
+    margin: 10px 0; /* Space above and below the heading */
+    font-size: 1.2em; /* Size of the heading */
+}
+
+.footer-info p {
+    margin: 5px 0; /* Space above and below paragraphs */
+    color: white; /* Text color */
+}
+
+.contact-info h3, .contact-info p {
+    margin: 5px 0; /* Space for contact info */
+    color: white; /* Text color for contact info */
+}
+
+.reviews-section {
+    width: 100%;
+    padding: 50px;
+    background: rgba(114, 210, 183, 0.9); /* White background with transparency */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #216869; /* Darker color for text */
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the review items */
+    gap: 20px; /* Space between items */
+}
+
+.review-item {
+    background: rgba(245, 245, 245, 0.8); /* Light gray background with transparency */
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px; /* Fixed width for review items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.review-item img {
+    width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px; /* Space between image and text */
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .contact-header {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Set height to fit the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .contact-header img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .logo-link {
+            position: absolute; /* Position the logo absolutely within the contact-header */
+            top: 20px; /* Adjust this value to position it vertically */
+            left: 20px; /* Adjust this value to position it horizontally */
+            z-index: 10; /* Ensure it appears above the background image */
+        }
+    
+        .header-logo {
+            width: 50px; /* Set a small width for the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .contact-body {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px; /* Reduced padding */
+            max-width: 1200px;
+            margin: auto; /* Pull the contact body up and add bottom margin */
+            background-color: transparent; /* Remove background color */
+            color: #216869;
+            position: relative;
+            z-index: 1; /* Make sure it stays above the image */
+        }
+
+        .contact-left {
+            flex: 1;
+            padding: 20px;
+            display: flex; /* Enable flexbox layout */
+            flex-direction: column; /* Arrange children vertically */
+            justify-content: flex-start; /* Align children to the top */
+        }
+
+        .contact-left h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-left p {
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px; /* Decreased form width */
+            margin: 0 auto;
+            background-color: transparent; /* Remove background color */
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            color: #216869;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-form label {
+            font-size: 1rem;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #216869;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background-color: #1b574f;
+        }
+
+        .required {
+            color: red; /* Change the asterisk color to red */
+        }
+
+        @media (max-width: 768px) {
+            .contact-body {
+                flex-direction: column;
+            }
+
+            .contact-left {
+                margin-bottom: 20px;
+            }
+
+            .contact-form {
+                max-width: 100%;
+            }
+        }
+
+        
+.footer-menu {
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
+
+.content-footer-menu {
+    max-width: 1500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and Links */
+.bloc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.footer-info {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+    color: #0073e6;
+}
+
+/* Social Media Icons and Back to Top Button */
+.bloc-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusted gap between items */
+}
+
+.contact-info {
+    text-align: justify; /* Align text to the right */
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Increased gap for more space between icons */
+}
+
+.social a {
+    text-decoration: none;
+    color: #666;
+    font-size: 28px;
+    transition: color 0.9s;
+}
+
+.social a:hover {
+    color: #0073e6;
+}
+
+.button-top {
+    padding: 10px 12px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.button-top:hover {
+    background-color: #005bb5;
+}
+
+.footer-menu-secondary {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.footer-info h3 {
+    margin: 10px 0; /* Space above and below the heading */
+    font-size: 1.2em; /* Size of the heading */
+}
+
+.footer-info p {
+    margin: 5px 0; /* Space above and below paragraphs */
+    color: #666; /* Text color */
+}
+
+.contact-info h3, .contact-info p {
+    margin: 5px 0; /* Space for contact info */
+    color: #666; /* Text color for contact info */
+}
+
+/*footer*/
+
+
+.footer-menu {
+    background-color: #216869;
+    padding: 20px 0;
+    color: white;
+}
+
+.content-footer-menu {
+    max-width: 1500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and Links */
+.bloc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.footer-info {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color:white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+    color: #0073e6;
+}
+
+/* Social Media Icons and Back to Top Button */
+.bloc-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusted gap between items */
+}
+
+.contact-info {
+    text-align: justify; /* Align text to the right */
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Increased gap for more space between icons */
+}
+
+.social a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: color 0.9s;
+}
+
+.social a:hover {
+    color: #0073e6;
+}
+
+.button-top {
+    padding: 10px 12px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.button-top:hover {
+    background-color: #005bb5;
+}
+
+.footer-menu-secondary {
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration-color: #216869;
+}
+.footer-menu-secondary p{
+    font-size: 14px;
+    color: #216869;
+}
+.footer-info h3 {
+    margin: 10px 0; /* Space above and below the heading */
+    font-size: 1.2em; /* Size of the heading */
+}
+
+.footer-info p {
+    margin: 5px 0; /* Space above and below paragraphs */
+    color: white; /* Text color */
+}
+
+.contact-info h3, .contact-info p {
+    margin: 5px 0; /* Space for contact info */
+    color: white; /* Text color for contact info */
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Contact Us Header with Image -->
+    <div class="contact-header">
+        <img src="{{ url_for('static', filename='images/contact.jpg') }}" alt="Contactbg">
+        <a href="{{ url_for('index') }}" class="logo-link">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="header-logo">
+        </a>
+    </div>
+    <!-- Contact Us Body -->
+    <div class="contact-body">
+        <!-- Left Side Text -->
+        <div class="contact-left">
+            <h2>Have questions or need assistance?</h2>
+            <p>Fill in the form with your details, and let us know how we can help. We're committed to getting back to you with the information you need.</p>
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="contact-form">
+            <h2>Contact Form</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="firstName">*First Name:<span class="required">*</span></label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">*Last Name:<span class="required">*</span></label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">*Email:<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+
+                <label for="inquiry">*Reason for Inquiry:<span class="required">*</span></label>
+                <select id="inquiry" name="inquiry" required>
+                    <option value="">Select...</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Support</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+
+                <label for="comment">*Comment / Question:<span class="required">*</span></label>
+                <textarea id="comment" name="comment" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+<!-- Footer -->
+<footer class="footer-menu">
+    <div class="content-footer-menu">
+        <!-- Left Section: Logo and Links -->
+        <div class="bloc-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="footer-logo">
+            <div class="footer-info">
+                <p class="description">Anugya is committed to driving innovation in green energy solutions...</p>
+                <ul class="footer-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Contact Info and Social Icons -->
+        <div class="bloc-right">
+            <!-- Added Contact Us Section -->
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>info@anugya.com</p>
+                <p>+123 456 7890</p>
+            </div>
+            <div class="social">
+                <p class="description">Follow us</p>
+                <a href="https://www.facebook.com/anugya" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/anugya" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/anugya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/anugya" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <button class="button-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+        </div>
+    </div>
+
+    <!-- Secondary Footer -->
+    <div class="footer-menu-secondary">
+        <p>© 2024 Anugya Technology LLP All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

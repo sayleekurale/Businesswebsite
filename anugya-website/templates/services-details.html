@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services-details.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="solar" class="service-detail-section">
+        <img src="{{ url_for('static', filename='images/nature.jpeg') }}" alt="background" class="bg">
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/solar.jpeg') }}" alt="Solar Panel Installation" class="service-image">
+            <h2>Solar Panel Installation</h2>
+            <p>Our solar panel installation services are designed to help you harness the sun's energy efficiently. We provide state-of-the-art solutions that are cost-effective, durable, and highly efficient. Our team of experts conducts a thorough assessment of your property to recommend the best solar solution tailored to your needs.</p>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li>Reduce your electricity bills significantly.</li>
+                <li>Decrease your carbon footprint.</li>
+                <li>Increase your property value.</li>
+                <li>Enjoy government incentives and rebates.</li>
+            </ul>
+            <p>We also offer maintenance services to ensure your solar panels operate at peak efficiency throughout their lifespan.</p>
+        </div>
+    </section>
+
+    <!-- Wind Section -->
+    <section id="wind" class="service-detail-section">
+        <img src="{{ url_for('static', filename='images/nature.jpeg') }}" alt="background" class="bg">
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/wind.jpeg') }}" alt="Wind Energy Solutions" class="service-image">
+            <h2>Wind Energy Solutions</h2>
+            <p>Our wind energy solutions provide sustainable power by converting the kinetic energy of the wind into clean, renewable electricity. This helps reduce reliance on fossil fuels and decrease environmental impact. We design and install wind turbines suitable for both residential and commercial applications.</p>
+            <h3>Advantages of Wind Energy:</h3>
+            <ul>
+                <li>Renewable and abundant energy source.</li>
+                <li>Low operational costs once installed.</li>
+                <li>Can be integrated with other energy systems.</li>
+                <li>Minimal environmental impact compared to fossil fuels.</li>
+            </ul>
+            <p>Our team will work closely with you to determine the ideal turbine size and location to maximize your energy production.</p>
+        </div>
+    </section>
+
+    <!-- Energy Audit Section -->
+    <section id="audit" class="service-detail-section">
+        <img src="{{ url_for('static', filename='images/nature.jpeg') }}" alt="background" class="bg">
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/audit.jpeg') }}" alt="Energy Audits" class="service-image">
+
+            <h2>Energy Audits</h2>
+            <p>Our comprehensive energy audits help you optimize energy usage and reduce waste. We assess your energy systems and provide actionable insights to improve efficiency and lower costs. Our audits include a thorough examination of your building's insulation, HVAC systems, and energy consumption patterns.</p>
+            <h3>Why Conduct an Energy Audit?</h3>
+            <ul>
+                <li>Identify energy-saving opportunities.</li>
+                <li>Understand your energy costs and usage.</li>
+                <li>Receive tailored recommendations for improvements.</li>
+                <li>Enhance comfort levels within your space.</li>
+            </ul>
+            <p>Following the audit, we provide a detailed report outlining our findings and suggested next steps for enhancing energy efficiency.</p>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer-menu">
+        <div class="content-footer-menu">
+            <!-- Left Section: Logo and Links -->
+            <div class="bloc-left">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="footer-logo">
+                <div class="footer-info">
+                    <p class="description">Anugya is committed to driving innovation in green energy solutions...</p>
+                    <ul class="footer-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Right Section: Contact Info and Social Icons -->
+            <div class="bloc-right">
+                <!-- Added Contact Us Section -->
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>info@anugya.com</p>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="social">
+                    <p class="description">Follow us</p>
+                    <a href="https://www.facebook.com/anugya" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/anugya" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/anugya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/anugya" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <button class="button-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+            </div>
+        </div>
+    
+        <!-- Secondary Footer -->
+        <div class="footer-menu-secondary">
+            <p>© 2024 Anugya Technology LLP All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+/* General Styles */
+body {
+    margin: 0;
+    background: linear-gradient(to bottom right, rgba(0, 128, 0, 0.8), rgba(255, 255, 255, 0.8));
+    background-size: cover; /* Cover the entire background */
+    color: #333;
+    font-family: 'Georgia', serif; /* Fallback for Georgia */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align header content to the left */
+    background-color: #216869; /* Dark green header */
+    padding: 10px 20px; /* Adjusted padding for top-left alignment */
+    color: white;
+    position: sticky; /* Sticky header */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow under header */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Spacing between links */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b7efa1; /* Light green on hover */
+}
+
+/* Hero Section */
+.hero-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Full screen height for hero section */
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scale image while maintaining aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Off-screen initially */
+    transition: left 0.5s ease-in-out;
+}
+
+.hero-image.active {
+    left: 0; /* Slide in */
+}
+
+.hero-image.previous {
+    left: -100%; /* Slide out */
+}
+
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    z-index: 2; /* Above the overlay */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-image.active ~ .overlay-text {
+    opacity: 1; /* Fade in text when image is active */
+}
+
+/* Navigation Arrow */
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 3; /* Above everything else */
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    padding: 40px; /* Adjusted padding for a more compact layout */
+    background-color: rgb(185 217 180 / 90%); /* Light background for the gallery to contrast with the body */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 20px; /* Added margin around the gallery */
+}
+
+.heading {
+    text-align: left;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info {
+    font-size: 20px;
+    color: rgb(2, 2, 2);
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    margin: 20px 0; /* Reduced vertical margin between gallery items */
+    position: relative;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.gallery-item.reverse {
+    flex-direction: row-reverse; /* Reverse the layout for alternate items */
+}
+
+.main-image {
+    width: 300px; /* Set width to a specific size for consistency */
+    height: 300px; /* Set height to a specific size for consistency */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px; /* Rounded corners */
+    margin-right: 15px; /* Adjusted margin to create space between image and description */
+}
+
+.description {
+    flex: 1; /* Allow description to take remaining space */
+    padding: 10px; /* Added padding for better readability */
+    text-align: left;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    position: relative; /* Changed to relative to avoid positioning issues */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row; /* Arrange icons in a row */
+    align-items: center; /* Center the icons horizontally */
+    margin-top: 20px; /* Space above icons */
+    gap: 15px; /* Space between icons */
+}
+
+.icon-container i {
+    font-size: 2em; /* Adjust size of icons */
+    color: #17e713; /* Match the green theme */
+    transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.icon-container i:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+/* Animation on scroll */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex-direction: column; /* Stack images and descriptions vertically on smaller screens */
+        align-items: center; /* Center content on mobile */
+    }
+
+    .main-image, .description {
+        width: 90%; /* Full width for mobile */
+        margin-right: 0; /* Remove margin for mobile view */
+    }
+}
+
+.description p {
+    display: flex;
+    align-items: center;
+}
+
+.description p i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #10440f; /* Match the green theme */
+}
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the icons horizontally */
+    margin-top: 20px; /* Space above icons */
+}
+
+.sustainable-energy-section {
+    padding: 20px; /* Adjust padding as needed */
+}
+
+/* Animation on scroll */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Footer Styles */
+
+/*footer*/
+
+
+.footer-menu {
+    background-color: #216869;
+    padding: 20px 0;
+    color: white;
+}
+
+.content-footer-menu {
+    max-width: 1500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and Links */
+.bloc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.footer-info {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color:white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+    color: #0073e6;
+}
+
+/* Social Media Icons and Back to Top Button */
+.bloc-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusted gap between items */
+}
+
+.contact-info {
+    text-align: justify; /* Align text to the right */
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Increased gap for more space between icons */
+}
+
+.social a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: color 0.9s;
+}
+
+.social a:hover {
+    color: #0073e6;
+}
+
+.button-top {
+    padding: 10px 12px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.button-top:hover {
+    background-color: #005bb5;
+}
+
+.footer-menu-secondary {
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration-color: #216869;
+}
+.footer-menu-secondary p{
+    font-size: 14px;
+    color: #216869;
+}
+.footer-info h3 {
+    margin: 10px 0; /* Space above and below the heading */
+    font-size: 1.2em; /* Size of the heading */
+}
+
+.footer-info p {
+    margin: 5px 0; /* Space above and below paragraphs */
+    color: white; /* Text color */
+}
+
+.contact-info h3, .contact-info p {
+    margin: 5px 0; /* Space for contact info */
+    color: white; /* Text color for contact info */
+}

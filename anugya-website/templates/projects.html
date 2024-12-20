@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Focused Web Design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-container">
+            <img src="{{ url_for('static', filename='images/projects.jpeg') }}" alt="background" class="hero-image active" id="main-image">
+            <div class="overlay-text">"Renewable energy is the clear path to a future of sustainability and economic growth." – <h5>Christiana Figueres</h5></div>
+            
+        </div>
+    </section>
+    <!-- Feature Section -->
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-wind"></i>
+            <h2>Renewable Energy</h2>
+        </div>
+        <div class="feature">
+            <i class="fas fa-solar-panel"></i>
+            <h2>Solar Solutions</h2>
+        </div>
+        <div class="feature">
+            <i class="fas fa-leaf"></i>
+            <h2>Wind Power</h2>
+        </div>
+       
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+        <div class="about-content">
+            <img src="{{ url_for('static', filename='images/projects.jpeg') }}"  alt="Green Energy">
+            <div class="about-text">
+                <h2>About Our Company</h2>
+                <p>At Anugya, we are deeply committed to delivering sustainable, innovative, and renewable energy solutions to clients across the globe. Our mission is to drive the transition to a cleaner, greener future by integrating advanced technologies with environmentally responsible practices. We believe in harnessing the power of natural resources—such as solar, wind, and hydro energy—to reduce carbon footprints and foster long-term environmental stewardship.
+
+                    Our approach is centered on providing custom, scalable energy solutions that cater to the unique needs of each client, ensuring optimal efficiency and effectiveness. Whether it's through green energy consultations, large-scale renewable energy projects, or sustainable design integrations, our goal is to contribute to a more sustainable planet.
+                    
+                    With a dedicated team of experts, cutting-edge technology, and a focus on innovation, we aim to empower communities and businesses to embrace renewable energy and make a tangible impact on the global energy landscape. At Anugya, sustainability isn’t just a goal—it’s at the heart of everything we do.
+                    
+                    </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h1>Our Services</h1>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>Solar Installation</h3>
+                <p>We provide top-notch solar panel installation services to reduce energy consumption.</p>
+            </div>
+            <div class="service-item">
+                <h3>Wind Turbine Solutions</h3>
+                <p>Our wind energy solutions help generate clean and efficient power.</p>
+            </div>
+            <!-- More service items -->
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer-menu">
+        <div class="content-footer-menu">
+            <!-- Left Section: Logo and Links -->
+            <div class="bloc-left">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="footer-logo">
+                <div class="footer-info">
+                    <p class="description">Anugya is committed to driving innovation in green energy solutions...</p>
+                    <ul class="footer-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Right Section: Contact Info and Social Icons -->
+            <div class="bloc-right">
+                <!-- Added Contact Us Section -->
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>info@anugya.com</p>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="social">
+                    <p class="description">Follow us</p>
+                    <a href="https://www.facebook.com/anugya" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/anugya" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/anugya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/anugya" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <button class="button-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+            </div>
+        </div>
+    
+        <!-- Secondary Footer -->
+        <div class="footer-menu-secondary">
+            <p>© 2024 Anugya Technology LLP All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Request a Quotation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: serif, Georgia;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Use column layout for header and main content */
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align header content to the left */
+            background-color: #216869; /* Dark green header */
+            padding: 10px 20px; /* Adjusted padding for top-left alignment */
+            color: white;
+            position: sticky; /* Sticky header */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow under header */
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Aligns content to the left */
+            width: 100%;
+        }
+
+        /* Logo */
+        .logo {
+            height: 50px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style-type: none; /* Remove bullet points from list */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px; /* Spacing between the links */
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white; /* White text color */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 5px 10px; /* Padding for clickable area */
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #b7efa1; /* Light green color on hover */
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1; /* Takes up remaining space */
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            position: relative;
+            padding: 20px; /* Add some padding */
+        }
+
+        /* Left Container Styles */
+        .left-container {
+            flex: 1; /* Takes up space on the left */
+            padding: 40px;
+            color: #fff;
+            position: relative;
+            z-index: 2; /* Ensure it appears above the background */
+        }
+
+        /* Form Container Styles */
+        .right-container {
+            max-width: 400px; /* Limit the width of the form */
+            margin-left: 20px; /* Add space between left and right containers */
+            z-index: 2; /* Ensure it appears above the background */
+        }
+
+        .quotation-form {
+            padding: 30px;
+            background: linear-gradient(45deg, rgba(38, 132, 123, 0.9), rgba(255, 255, 255, 0.2));
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0.95;
+            z-index: 2;
+            color: #fff;
+        }
+
+        /* Blurred background image */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Place behind content */
+            object-fit: cover;
+            filter: blur(8px); /* Apply blur */
+        }
+
+        /* Gradient Animation for the Form */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .quotation-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .quotation-form input,
+        .quotation-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .quotation-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #26847b;
+            color: white;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .quotation-form button:hover {
+            background-color: #1b5d5a;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .quotation-form {
+                width: 100%;
+                margin: 0;
+            }
+
+            .main-content {
+                flex-direction: column; /* Stack on smaller screens */
+            }
+
+            .left-container {
+                padding: 20px; /* Reduce padding on smaller screens */
+            }
+
+            .right-container {
+                margin-left: 0; /* Remove left margin on smaller screens */
+            }
+        }
+                    
+            /*footer*/
+
+
+            .footer-menu {
+                background-color: #216869;
+                padding: 20px 0;
+                color: white;
+            }
+
+            .content-footer-menu {
+                max-width: 1500px;
+                height: 200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            /* Logo and Links */
+            .bloc-left {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .footer-logo {
+                width: 150px;
+            }
+
+            .footer-info {
+                display: flex;
+                width: 800px;
+                flex-direction: column;
+            }
+
+            .footer-nav {
+                display: flex;
+                gap: 15px;
+                list-style: none;
+                padding: 0;
+                margin-top: 10px;
+            }
+
+            .footer-nav li a {
+                text-decoration: none;
+                color:white;
+                font-size: 14px;
+                transition: color 0.3s;
+            }
+
+            .footer-nav li a:hover {
+                color: #0073e6;
+            }
+
+            /* Social Media Icons and Back to Top Button */
+            .bloc-right {
+                display: flex;
+                align-items: center;
+                gap: 20px; /* Adjusted gap between items */
+            }
+
+            .contact-info {
+                text-align: justify; /* Align text to the right */
+            }
+
+            .social {
+                display: flex;
+                align-items: center;
+                gap: 25px; /* Increased gap for more space between icons */
+            }
+
+            .social a {
+                text-decoration: none;
+                color: white;
+                font-size: 28px;
+                transition: color 0.9s;
+            }
+
+            .social a:hover {
+                color: #0073e6;
+            }
+
+            .button-top {
+                padding: 10px 12px;
+                background-color: #0073e6;
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.9s;
+            }
+
+            .button-top:hover {
+                background-color: #005bb5;
+            }
+
+            .footer-menu-secondary {
+                background-color: #e0e0e0;
+                padding: 6px 12px;
+                text-align: center;
+                text-decoration-color: #216869;
+            }
+            .footer-menu-secondary p{
+                font-size: 14px;
+                color: #216869;
+            }
+            .footer-info h3 {
+                margin: 10px 0; /* Space above and below the heading */
+                font-size: 1.2em; /* Size of the heading */
+            }
+
+            .footer-info p {
+                margin: 5px 0; /* Space above and below paragraphs */
+                color: white; /* Text color */
+            }
+
+            .contact-info h3, .contact-info p {
+                margin: 5px 0; /* Space for contact info */
+                color: white; /* Text color for contact info */
+            }
+
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                    <a href="{{ url_for('services') }}" class="nav-link">Services</a>
+                    <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Background image with blur -->
+        <img src="{{ url_for('static', filename='images/quotebg.jpg') }}" alt="bg-image" class="bg-image">
+        
+        <!-- Left Container with Logo and Description -->
+        <div class="left-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="logo">
+            <h1>Anugya</h1>
+            <div class="description">
+                <p>Your trusted partner in sustainable energy solutions.</p>
+                <p>We provide a range of services to help you transition to green energy and reduce your carbon footprint.</p>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="right-container">
+            <form class="quotation-form" method="POST">
+                <h2>Request a Quotation</h2>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" name="project_name" required>
+                <label for="project-description">Project Description</label>
+                <textarea id="project-description" name="project_description" rows="4" required></textarea>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone_number" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS for the alert closing functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<footer class="footer-menu">
+    <div class="content-footer-menu">
+        <!-- Left Section: Logo and Links -->
+        <div class="bloc-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="footer-logo">
+            <div class="footer-info">
+                <p class="description">Anugya is committed to driving innovation in green energy solutions...</p>
+                <ul class="footer-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Contact Info and Social Icons -->
+        <div class="bloc-right">
+            <!-- Added Contact Us Section -->
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>info@anugya.com</p>
+                <p>+123 456 7890</p>
+            </div>
+            <div class="social">
+                <p class="description">Follow us</p>
+                <a href="https://www.facebook.com/anugya" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/anugya" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/anugya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/anugya" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <button class="button-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+        </div>
+    </div>
+
+    <!-- Secondary Footer -->
+    <div class="footer-menu-secondary">
+        <p>© 2024 Anugya Technology LLP All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+
+</html>

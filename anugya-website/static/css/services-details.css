@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom right, rgba(0, 128, 0, 0.8), rgba(255, 255, 255, 0.8));
+    background-size: cover; /* Cover the entire background */
+    color: #333;
+    font-family: 'Georgia', serif; /* Fallback for Georgia */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align header content to the left */
+    background-color: #216869; /* Dark green header */
+    padding: 10px 20px; /* Adjusted padding for top-left alignment */
+    color: white;
+    position: sticky; /* Sticky header */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow under header */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Spacing between links */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b7efa1; /* Light green on hover */
+}
+/* Service Section Styling */
+.service-detail-section {
+    position: relative; /* Needed for absolute positioning of the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    color: #333; /* Text color for better visibility against the background */
+}
+
+.bg {
+    position: absolute; /* Position the image absolutely within the section */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Make the image cover the entire width */
+    height: 100%; /* Make the image cover the entire height */
+    object-fit: cover; /* Maintain aspect ratio and cover the section */
+    z-index: -1; /* Place the image behind the content */
+    opacity: 0.7; /* Optional: Add some transparency */
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 600px;
+    max-height: fit-content;
+    text-align: left;
+    margin: 20px;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2 {
+    color: #54DD52;
+    font-size: 1.8rem;
+    margin: 15px;
+    text-align: center;
+}
+
+.service-card p {
+    color: #333;
+    font-size: 1rem;
+    padding: 0 15px;
+    text-align: justify;
+}
+
+.service-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.05);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-detail-section {
+        flex-direction: column;
+    }
+
+    .service-card {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    .service-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/*footer*/
+
+
+.footer-menu {
+    background-color: #216869;
+    padding: 20px 0;
+    color: white;
+}
+
+.content-footer-menu {
+    max-width: 1500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and Links */
+.bloc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.footer-info {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color:white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+    color: #0073e6;
+}
+
+/* Social Media Icons and Back to Top Button */
+.bloc-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusted gap between items */
+}
+
+.contact-info {
+    text-align: justify; /* Align text to the right */
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Increased gap for more space between icons */
+}
+
+.social a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: color 0.9s;
+}
+
+.social a:hover {
+    color: #0073e6;
+}
+
+.button-top {
+    padding: 10px 12px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.button-top:hover {
+    background-color: #005bb5;
+}
+
+.footer-menu-secondary {
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration-color: #216869;
+}
+.footer-menu-secondary p{
+    font-size: 14px;
+    color: #216869;
+}
+.footer-info h3 {
+    margin: 10px 0; /* Space above and below the heading */
+    font-size: 1.2em; /* Size of the heading */
+}
+
+.footer-info p {
+    margin: 5px 0; /* Space above and below paragraphs */
+    color: white; /* Text color */
+}
+
+.contact-info h3, .contact-info p {
+    margin: 5px 0; /* Space for contact info */
+    color: white; /* Text color for contact info */
+}

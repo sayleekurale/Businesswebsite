@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Energy | Anugya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sustain.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-container">
+            <img src="{{ url_for('static', filename='images/sustainbg.jpeg') }}" alt="background" class="hero-image active" id="main-image">
+            <div class="overlay-text">"Renewable energy is the clear path to a future of sustainability and economic growth." – <h5>Christiana Figueres</h5></div>
+            <div class="arrow right-arrow" onclick="changeImage()">&#10095;</div>
+        </div>
+    </section>
+    
+    <div class="gallery">
+        <div class="heading">
+            <h1>Renewable Resources for Sustainable Development</h1>
+        </div>
+        
+        <div class="info">
+            <h3>Introduction</h3>
+            <p>In the face of climate change, resource depletion, and environmental degradation, the world is increasingly recognizing the importance of renewable resources for sustainable development. As we grapple with rising global temperatures, extreme weather events, and the pressing need to conserve our planet’s ecosystems, a transition to renewable energy sources has become not just an option but a necessity. Renewable resources, such as solar, wind, hydroelectric, and biomass energy, offer sustainable alternatives to fossil fuels. They play a crucial role in reducing greenhouse gas emissions, which are the primary drivers of climate change.</p>
+            <p>The reliance on non-renewable resources has led to significant environmental challenges, including air and water pollution, habitat destruction, and loss of biodiversity. In contrast, renewable resources provide a pathway to mitigate these impacts while promoting a healthier environment. Moreover, these resources are inherently sustainable; they can be harnessed indefinitely without depleting the Earth’s natural reserves. This aspect of renewables ensures a stable energy supply for future generations.</p>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="main-image" style="background-image: url('{{ url_for('static', filename='images/ren1.jpeg') }}');"></div>
+            <div class="description">
+                <article>
+                    <h1>Renewable Energy Sources for Sustainable Development</h1>
+                    <p>Renewable energy sources for sustainable development stem from natural processes that are replenished at a faster rate than they are consumed. These energy sources not only mitigate climate change impacts but also foster economic growth and social development. Here’s an in-depth look at various renewable energy sources and their significance for sustainable development:</p>
+                    
+                    <h2>Bioenergy</h2>
+                    <p>Bioenergy is derived from organic materials, including plant and animal waste. It can be harnessed to generate electricity, provide heat, and produce biofuels, such as biodiesel and ethanol, for transportation. This energy source offers a dual benefit: it helps reduce dependence on fossil fuels and provides a sustainable waste management solution. Bioenergy systems can be implemented at various scales, from household biogas digesters to large biomass power plants. By utilizing local resources, bioenergy has the potential to enhance energy security, stimulate rural economies, and minimize greenhouse gas emissions.</p>
+                    
+                    <h2>Direct Solar Energy</h2>
+                    <p>Direct solar energy harnesses sunlight to generate electricity and heat. It encompasses technologies like photovoltaic (PV) cells, which convert sunlight directly into electricity, and solar thermal systems, which utilize sunlight to heat water or air for residential and industrial applications. Solar energy is versatile; it can be deployed in small-scale rooftop installations or large solar farms. Furthermore, solar energy contributes to decentralized energy generation, reducing transmission losses and empowering communities to take charge of their energy needs. Innovations like solar energy storage systems are making it possible to utilize solar power even when the sun isn't shining, thus enhancing its reliability.</p>
+                    
+                    <h2>Hydropower</h2>
+                    <p>Hydropower is one of the most established and widely used renewable energy sources. It generates electricity by harnessing the kinetic energy of flowing water, typically from rivers or dams. When water flows from a higher elevation to a lower elevation, it turns turbines that convert this energy into electricity. Hydropower is a renewable resource that can provide a steady and reliable power supply, making it essential for balancing energy grids. Additionally, hydropower can be utilized for irrigation and flood control, further enhancing its contribution to sustainable development. However, it is crucial to manage hydropower projects responsibly to mitigate their environmental and social impacts.</p>
+                    
+                    <h2>Wind Energy</h2>
+                    <p>Wind energy captures the kinetic energy of wind through turbines to generate electricity. It is one of the fastest-growing renewable energy sectors globally, with onshore and offshore wind farms proliferating. Wind energy is particularly effective in regions with consistent wind patterns, contributing significantly to the energy mix in countries like Denmark and Germany. The technology continues to evolve, with larger and more efficient turbines being developed. Wind energy reduces reliance on fossil fuels and has a minimal environmental footprint compared to traditional energy sources, making it a critical component of sustainable energy strategies.</p>
+                    
+                    <h2>Geothermal Energy</h2>
+                    <p>Geothermal energy is harnessed from the heat stored beneath the Earth's surface. This energy can be utilized for direct heating applications, electricity generation, and even cooling systems. Geothermal power plants exploit geothermal reservoirs, where steam or hot water is extracted to turn turbines and generate electricity. Countries with significant geothermal resources, such as Iceland and the Philippines, have successfully integrated geothermal energy into their national grids. Geothermal energy is reliable and available year-round, making it an essential resource for achieving energy independence and sustainability.</p>
+                    
+                    <h2>Tidal Energy</h2>
+                    <p>Tidal energy is derived from the gravitational pull of the moon and sun, which causes regular changes in sea levels. This energy can be harnessed using tidal turbines or barrages that convert the movement of water into electricity. The ocean, covering approximately 71% of the Earth's surface, holds immense potential for tidal energy generation. Tidal energy is predictable and consistent, offering a reliable energy source that can complement other renewable energies. As technology advances, tidal energy can play a significant role in diversifying the energy portfolio and reducing greenhouse gas emissions.</p>
+                    
+                    <h2>Ocean Thermal Energy Conversion (OTEC)</h2>
+                    <p>Ocean Thermal Energy Conversion (OTEC) exploits the temperature differences between warmer surface water and colder deep seawater to generate electricity. This technology can provide a continuous energy supply, as ocean temperature gradients are relatively stable year-round. OTEC systems can also be integrated with desalination processes, providing fresh water in water-scarce regions. The development of OTEC technologies can contribute significantly to sustainable development by providing renewable energy and fresh water simultaneously.</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="gallery-item reverse">
+            <div class="main-image" style="background-image: url('{{ url_for('static', filename='images/ren2.jpeg') }}');"></div>
+            <div class="description">
+                <section>
+                    <h1>Benefits of Sustainable Energy</h1>
+                    <p>There is a broad range of benefits to transitioning to sustainable energy. Below, we’ll explore the significant ways sustainable energy can positively impact our communities and the planet:</p>
+                    
+                    <h2>Improves Public Health</h2>
+                    <p><i class="fas fa-heartbeat"></i> The burning of fossil fuels in coal and natural gas plants is directly associated with numerous severe public health issues, such as respiratory diseases, cardiovascular problems, neurological damage, and increased cancer risks. These energy sources emit harmful air and water pollutants that adversely affect surrounding communities and ecosystems.</p>
+                    <p>In contrast, sustainable energy sources—such as solar, wind, and hydropower—emit little to no pollutants. By switching to these cleaner alternatives, we can dramatically reduce health risks related to air and water quality. Moreover, sustainable energy solutions do not compete with local agriculture or drinking water resources, preserving vital community assets.</p>
+                    
+                    <h2>Creates Local Jobs</h2>
+                    <p><i class="fas fa-briefcase"></i> The shift to sustainable energy can significantly boost local economies. Most renewable energy projects require local labor for installation, maintenance, and operation. This transition not only generates jobs but also promotes local industry, as communities invest in their renewable infrastructure.</p>
+                    <p>As the renewable energy sector expands, it creates opportunities in manufacturing, transportation, and sales, supporting a diverse range of employment options. Furthermore, many of these jobs are permanent and provide long-term career prospects, contributing to the economic stability of local communities.</p>
+                    
+                    <h2>Enhances Energy Security</h2>
+                    <p><i class="fas fa-shield-alt"></i> Relying on fossil fuels for energy poses significant risks, including price volatility, supply disruptions, and geopolitical tensions. In contrast, renewable energy sources are abundant and locally available, reducing dependency on imported fuels and enhancing energy security.</p>
+                    <p>By investing in a diverse mix of renewable energy technologies, communities can increase their resilience against market fluctuations and external shocks. Furthermore, sustainable energy systems can be decentralized, allowing communities to generate their power locally and reducing vulnerabilities associated with large, centralized power grids.</p>
+                    
+                    <h2>Mitigates Climate Change</h2>
+                    <p><i class="fas fa-globe"></i> The continued reliance on fossil fuels is the leading cause of climate change, threatening global ecosystems and human societies. By transitioning to renewable energy sources, we can significantly reduce greenhouse gas emissions, which are responsible for global warming.</p>
+                    <p>Sustainable energy not only helps mitigate the effects of climate change but also promotes adaptive strategies that enhance community resilience. For instance, communities investing in renewable energy can adapt to changing climate conditions, such as extreme weather events, droughts, and rising sea levels.</p>
+                    
+                    <h2>Supports Sustainable Development Goals (SDGs)</h2>
+                    <p><i class="fas fa-globe"></i> The United Nations' Sustainable Development Goals (SDGs) encompass a comprehensive framework aimed at addressing global challenges, including poverty, inequality, and climate change. Sustainable energy is a critical enabler for achieving these goals, particularly SDG 7, which aims to ensure access to affordable, reliable, sustainable, and modern energy for all.</p>
+                    <p>By investing in renewable energy infrastructure and promoting energy efficiency, we can create sustainable solutions that contribute to economic growth, social equity, and environmental protection. Sustainable energy systems enhance overall well-being while empowering communities to become active participants in shaping their future.</p>
+                </section>
+            </div>
+        </div>
+        
+        <div class="bottom-section">
+            <h3>Join Us in Creating a Sustainable Future</h3>
+            <p>If you are interested in learning more about our sustainable energy initiatives or how you can get involved, please contact us or explore our services. Together, we can build a cleaner, greener future for generations to come.</p>
+        </div>
+    </div>
+
+     <!-- Footer -->
+<footer class="footer-menu">
+    <div class="content-footer-menu">
+        <!-- Left Section: Logo and Links -->
+        <div class="bloc-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="footer-logo">
+            <div class="footer-info">
+                <p class="description">Anugya is committed to driving innovation in green energy solutions...</p>
+                <ul class="footer-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Contact Info and Social Icons -->
+        <div class="bloc-right">
+            <!-- Added Contact Us Section -->
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>info@anugya.com</p>
+                <p>+123 456 7890</p>
+            </div>
+            <div class="social">
+                <p class="description">Follow us</p>
+                <a href="https://www.facebook.com/anugya" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/anugya" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/anugya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/anugya" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <button class="button-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+        </div>
+    </div>
+
+    <!-- Secondary Footer -->
+    <div class="footer-menu-secondary">
+        <p>© 2024 Anugya Technology LLP All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const images = [
+    "{{ url_for('static', filename='images/sustainbg.jpeg') }}",
+    "{{ url_for('static', filename='images/sustainbg1.jpeg') }}",
+    "{{ url_for('static', filename='images/sustainbg2.jpeg') }}"
+    ];
+    
+    const texts = [
+    '"Renewable energy is the clear path to a future of sustainability and economic growth." – <h5>Christiana Figueres</h5>',
+    '"Renewable energy is not just the future; it is the present and will lead us to a cleaner, healthier world." – <h5>Frances Beinecke</h5>',
+    '"Wind, water, and solar energy are the future of power. They are clean, efficient, and endless." – <h5>Mark Z. Jacobson</h5>'
+    ];
+    
+    let currentImageIndex = 0;
+    const mainImage = document.getElementById('main-image');
+    const overlayText = document.getElementById('overlay-text');
+    
+    function changeImage() {
+    // Update image index
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    
+    // Update the image source
+    mainImage.src = images[currentImageIndex];
+    
+    // Update the overlay text
+    overlayText.innerHTML = texts[currentImageIndex];
+    }
+    
+    // Automatically change the image every 30 seconds
+    setInterval(changeImage, 30000);
+    </script>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

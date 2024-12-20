@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sustain.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Global Adjustments */
+body {
+    margin: 0;
+    background: linear-gradient(to bottom right, rgba(0, 128, 0, 0.8), rgba(255, 255, 255, 0.8));
+    color: #333;
+    font-family: 'Georgia', serif;
+}
+
+/* Hero Section */
+.hero-container {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Adds readability to text */
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin: 0;
+    
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+/* Info Section */
+.info-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Service Cards */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 20px;
+    background-color: #f0f4f7;
+}
+
+.service-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    background-color: #54DD52;
+    transform: scale(1.05);
+}
+
+.service-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px 0;
+}
+
+/* Read More Link */
+.read-more-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-link:hover {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+}
+
+/* Book Section */
+.book-section {
+    padding: 60px 20px;
+    background-color: #e0ffe0;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.book-container {
+    display: inline-block;
+    background-color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.book-container:hover {
+    background-color: white;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-item {
+        width: 90%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer */
+.footer-menu {
+    background-color: #216869;
+    padding: 20px 0;
+    color: white;
+}
+
+.content-footer-menu {
+    max-width: 1500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bloc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.footer-info {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+    color: #0073e6;
+}
+
+.bloc-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-info {
+    text-align: justify;
+}
+
+.description {
+    margin-bottom: 10px;
+    color: #f7f7f7;
+    font-family: 'Georgia', serif;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.social a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: color 0.9s;
+}
+
+.social a:hover {
+    color: #0073e6;
+}
+
+.button-top {
+    padding: 10px 12px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.button-top:hover {
+    background-color: #005bb5;
+}
+
+.footer-menu-secondary {
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    text-align: center;
+}
+
+.footer-menu-secondary p {
+    font-size: 14px;
+    color: #216869;
+}
+</style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <img src="{{ url_for('static', filename='images/green.jpeg') }}" alt="background" class="hero-image active" id="main-image">
+            <div class="overlay-text">
+                <h1>Powering the Future with Green Energy</h1>
+                <p>Leading the charge for a sustainable tomorrow.</p>
+        </div>
+    </section>
+    
+    <!-- Information Section -->
+    <section class="info-section">
+        <p>At Anugya, we specialize in delivering cutting-edge green energy solutions tailored to your needs. Our services are designed to reduce carbon footprints and create a sustainable future for all. From solar panel installations to energy audits, we're here to guide you through the transition to renewable energy.</p>
+    </section>
+
+    <section class="services">
+        <div class="service-item">
+            <img src="{{ url_for('static', filename='images/solar.jpeg') }}" alt="Solar Panel Installation" class="service-image">
+            <div class="service-content">
+                <h3>Solar Panel Installation</h3>
+                <p>Harness the power of the sun with our top-notch solar panel services.</p>
+                <!-- Link to Solar section -->
+                <a href="{{ url_for('services_details') }}#solar" class="read-more-link">Read More</a>
+            </div>
+        </div>
+        <div class="service-item">
+            <img src="{{ url_for('static', filename='images/wind.jpeg') }}" alt="Wind Energy Solutions" class="service-image">
+            <div class="service-content">
+                <h3>Wind Energy Solutions</h3>
+                <p>Tap into wind energy and transform your power supply sustainably.</p>
+                <!-- Link to Wind section -->
+                <a href="{{ url_for('services_details') }}#wind" class="read-more-link">Read More</a>
+            </div>
+        </div>
+        <div class="service-item">
+            <img src="{{ url_for('static', filename='images/audit.jpeg') }}" alt="Energy Audits" class="service-image">
+            <div class="service-content">
+                <h3>Energy Audits</h3>
+                <p>Optimize energy use with our comprehensive energy audits for your business or home.</p>
+                <!-- Link to Audit section -->
+                <a href="{{ url_for('services_details') }}#audit" class="read-more-link">Read More</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Book Your Service Section -->
+    <section class="book-section">
+        <p>Book your service today and take the first step toward a cleaner, greener energy future!</p>
+        <div class="book-container">
+            <a href="#book-now" class="book-now-link">Come one step closer to book your service</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-menu">
+        <div class="content-footer-menu">
+            <!-- Left Section: Logo and Links -->
+            <div class="bloc-left">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Anugya Logo" class="footer-logo">
+                <div class="footer-info">
+                    <p class="description">Anugya is committed to driving innovation in green energy solutions...</p>
+                    <ul class="footer-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Section: Contact Info and Social Icons -->
+            <div class="bloc-right">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>info@anugya.com</p>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="social">
+                    <p class="description">Follow us</p>
+                    <a href="https://www.facebook.com/anugya" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/anugya" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/anugya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/anugya" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <button class="button-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+            </div>
+        </div>
+
+        <!-- Secondary Footer -->
+        <div class="footer-menu-secondary">
+            <p>© 2024 Anugya Technology LLP All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
